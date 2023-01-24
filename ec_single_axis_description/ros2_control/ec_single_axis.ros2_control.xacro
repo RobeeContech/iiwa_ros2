@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ec_single_axis">
+
+    <ros2_control name="ec_single_axis" type="system">
+      <hardware>
+        <plugin>ethercat_driver/EthercatDriver</plugin>
+        <param name="master_id">0</param>
+        <param name="control_frequency">500</param>
+      </hardware>
+
+      <joint name="joint_1">
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <command_interface name="effort"/>
+        <ec_module name="EPOS3_x">
+          <plugin>custom_ethercat_plugins/Elmo_IPOS</plugin>
+          <param name="alias">0</param>
+          <param name="position">0</param>
+          <param name="mode_of_operation">8</param>
+          <param name="motor_position">position</param>
+          <param name="motor_velocity">velocity</param>
+          <param name="target_torque">effort</param>
+        </ec_module>
+      </joint>
+      
+    </ros2_control>
+  </xacro:macro>
+
+</robot>
