@@ -21,7 +21,7 @@
           <plugin>custom_ethercat_plugins/Elmo_Gold</plugin>
           <param name="alias">0</param>
           <param name="position">0</param>
-          <param name="mode_of_operation">10</param>
+          <param name="mode_of_operation">8</param>
         </ec_module>
       </joint>
       
