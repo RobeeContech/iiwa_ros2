@@ -16,11 +16,12 @@
         <state_interface name="effort"/>
         <command_interface name="position"/>
         <command_interface name="velocity"/>
+        <command_interface name="effort"/>
         <ec_module name="ELMO">
           <plugin>custom_ethercat_plugins/Elmo_Gold</plugin>
           <param name="alias">0</param>
           <param name="position">0</param>
-          <param name="mode_of_operation">9</param>
+          <param name="mode_of_operation">10</param>
         </ec_module>
       </joint>
       
