@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ec_single_axis">
+
+    <ros2_control name="ec_single_axis" type="system">
+      <hardware>
+        <plugin>ethercat_driver/EthercatDriver</plugin>
+        <param name="master_id">0</param>
+        <param name="control_frequency">100</param>
+      </hardware>
+
+      <joint name="joint_1">
+        <state_interface name="position"/>
+        <command_interface name="position"/>
+        <ec_module name="TECHNO">
+          <plugin>custom_ethercat_plugins/Technosoft_IPOS</plugin>
+          <param name="alias">0</param>
+          <param name="position">2</param>
+          <param name="mode_of_operation">8</param>
+          <param name="motor_position">position</param>
+          <!-- <param name="motor_velocity">velocity</param> -->
+          <param name="target_position">position</param>
+        </ec_module>
+      </joint>
+      
+    </ros2_control>
+  </xacro:macro>
+
+</robot>

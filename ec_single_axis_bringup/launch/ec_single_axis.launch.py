@@ -1,11 +1,25 @@
 from launch import LaunchDescription
-from launch.substitutions import Command, FindExecutable, PathJoinSubstitution
+from launch.substitutions import Command, FindExecutable, PathJoinSubstitution, LaunchConfiguration
+from launch.actions import DeclareLaunchArgument
 
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
+
+    # Declare arguments
+    declared_arguments = []
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            'description_file',
+            default_value='ec_single_axis.config.xacro',
+            description='URDF/XACRO description file with the axis.',
+        )
+    )
+
+    description_file = LaunchConfiguration('description_file')
+
     # Get URDF via xacro
     robot_description_content = Command(
         [
@@ -15,7 +29,7 @@ def generate_launch_description():
                 [
                     FindPackageShare("ec_single_axis_description"),
                     "config", 
-                    "ec_single_axis.config.xacro",
+                    description_file,
                 ]
             ),
         ]
@@ -76,4 +90,6 @@ def generate_launch_description():
         # effort_controller_spawner,
     ]
 
-    return LaunchDescription(nodes)
+    return LaunchDescription(
+        declared_arguments + 
+        nodes)
