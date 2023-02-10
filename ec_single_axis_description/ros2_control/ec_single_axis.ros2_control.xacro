@@ -14,19 +14,28 @@
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
-        <state_interface name="external_effort"/>
         <command_interface name="position"/>
         <command_interface name="velocity"/>
-        <command_interface name="effort"/>
-        <ec_module name="ELMO">
-          <plugin>custom_ethercat_plugins/Elmo_Gold</plugin>
+        <ec_module name="TECHNO">
+          <plugin>ethercat_plugins/Technosoft_IPOS</plugin>
           <param name="alias">0</param>
-          <param name="position">0</param>
+          <param name="position">1</param>
           <param name="mode_of_operation">8</param>
-          <param name="state_interface_for_analog_input">external_effort</param>
         </ec_module>
       </joint>
-      
+
+      <gpio name="Gpio1">
+        <state_interface name="di.1"/>
+        <state_interface name="do.1"/>
+        <command_interface name="do.1"/>
+        <ec_module name="TECHNO">
+          <plugin>ethercat_plugins/Technosoft_IPOS</plugin>
+          <param name="alias">0</param>
+          <param name="position">1</param>
+          <param name="di.1">di.1</param>
+          <param name="do.1">do.1</param>
+        </ec_module>
+      </gpio>
     </ros2_control>
   </xacro:macro>
 

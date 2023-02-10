@@ -14,6 +14,9 @@ controller_manager:
     effort_controller:
       type: effort_controllers/JointGroupEffortController
 
+    gpio_command_controller:
+      type: gpio_controllers/GpioCommandController
+
 trajectory_controller:
   ros__parameters:
     command_interfaces:
@@ -32,3 +35,11 @@ effort_controller:
   ros__parameters:
     joints:
       - joint_1
+
+gpio_command_controller:
+  ros__parameters:
+    gpios:
+      - Gpio1
+    command_interfaces:
+      Gpio1:
+        - do.1

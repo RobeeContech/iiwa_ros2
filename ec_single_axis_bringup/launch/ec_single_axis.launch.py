@@ -81,6 +81,12 @@ def generate_launch_description():
         arguments=["effort_controller", "-c", "/controller_manager"],
     )
 
+    gpio_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["gpio_command_controller", "-c", "/controller_manager"],
+    )
+
     nodes = [
         control_node,
         robot_state_pub_node,
@@ -88,6 +94,7 @@ def generate_launch_description():
         trajectory_controller_spawner,
         # velocity_controller_spawner,
         # effort_controller_spawner,
+        gpio_controller_spawner,
     ]
 
     return LaunchDescription(
