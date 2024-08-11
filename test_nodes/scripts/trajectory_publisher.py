@@ -7,7 +7,6 @@ import random
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
 class TrajectoryPublisher(Node):
-
     def __init__(self):
         super().__init__('trajectory_publisher')
         self.publisher_ = self.create_publisher(JointTrajectory, '/trajectory_controller/joint_trajectory', 1)
