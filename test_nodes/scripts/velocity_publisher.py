@@ -27,8 +27,6 @@ class VelocityPublisher(Node):
         self.i = self.i + 1
         self.publisher_.publish(msg)
         
-        
-        
 def main(args=None):
     rclpy.init(args=args)
     vel_pub = VelocityPublisher()
