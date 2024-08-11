@@ -10,7 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(ethercat_driver REQUIRED)
 find_package(ethercat_interface REQUIRED)
-find_package(ethercat_plugins REQUIRED)
+#find_package(ethercat_plugins REQUIRED)
 
 install(
   DIRECTORY config ros2_control

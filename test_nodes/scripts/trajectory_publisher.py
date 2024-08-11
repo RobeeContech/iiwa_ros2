@@ -3,7 +3,8 @@
 import rclpy
 from rclpy.node import Node
 import random
-
+from math import sin
+import time
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
 class TrajectoryPublisher(Node):
@@ -20,7 +21,8 @@ class TrajectoryPublisher(Node):
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.joint_names = ['joint_1']
         point = JointTrajectoryPoint()
-        point.positions = [random.random()*3-1.5]
+        sign = 1.0 if self.i%2 == 0 else -1.0
+        point.positions = [sign*30000.0]
         point.time_from_start.sec = 1
         msg.points = [point]
         self.publisher_.publish(msg)
