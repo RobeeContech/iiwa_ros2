@@ -1,3 +1,9 @@
+# Robee Varient
+This is a fork of Maciej ethercat single axis repo.
+We use this repo to test and integrate separate drives to our system.
+
+***PLEASE READ THE DOCS REPO FOR MORE INFORMATION***
+
 # ec_single_axis
 
 Test hardware configuration for single axis actuation with [ethercat_driver_ros2](https://github.com/ICube-Robotics/ethercat_driver_ros2). 
