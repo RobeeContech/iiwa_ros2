@@ -28,7 +28,5 @@
         </ec_module>
       </joint>
     </ros2_control>
-
   </xacro:macro>
-
 </robot>

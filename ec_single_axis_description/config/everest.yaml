@@ -1,4 +1,5 @@
-# Configuration file for 
+
+# Configuration file for everest inginia drive
 vendor_id: 0x0000029c
 product_id: 0x03b31001
 assign_activate: 0x0330  # DC Synch register
