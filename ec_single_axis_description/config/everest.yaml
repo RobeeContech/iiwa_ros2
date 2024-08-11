@@ -14,6 +14,7 @@ rpdo:  # RxPDO = receive PDO Mapping
       - {index: 0x607a, sub_index: 0, type: int32, command_interface: position}  # Target position
       - {index: 0x60ff, sub_index: 0, type: int32, command_interface: velocity, default: 0}  # Target velocity
       - {index: 0x6060, sub_index: 0, type: int8, command_interface: mode_of_operation, default: 8}  # Mode of operation
+      
  
 tpdo:  # TxPDO = transmit PDO Mapping
   - index: 0x1a00
@@ -22,5 +23,5 @@ tpdo:  # TxPDO = transmit PDO Mapping
       - {index: 0x6064, sub_index: 0, type: int32, state_interface: position}  # Position actual value
       - {index: 0x606c, sub_index: 0, type: int32, state_interface: velocity}  # Velocity actual value 65536 = 1 encoder increment/sample (internal driver slow loop : 1khz )
       - {index: 0x6061, sub_index: 0, type: int8, state_interface: mode_of_operation}  # Mode of operation display
-
+      - {index: 0x2600, sub_index: 0, type: uint32, state_interface: digital_input}
 

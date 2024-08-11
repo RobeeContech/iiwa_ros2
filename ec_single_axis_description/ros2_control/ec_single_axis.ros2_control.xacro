@@ -15,6 +15,7 @@
         <state_interface name="velocity"/>
         <state_interface name="status_word"/>
         <state_interface name="mode_of_operation"/>
+        <state_interface name="digital_input"/>
         <command_interface name="position"/>
         <command_interface name="velocity"/>
         <command_interface name="control_word"/>
