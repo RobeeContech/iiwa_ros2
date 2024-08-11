@@ -27,3 +27,6 @@ python3 src/iiwa_ros2/test_nodes/scripts/velocity_publisher.py
 
 ## Notes
 * \* when configuring the Inginia drive the drive refused to share data when asked to with the `ethercat cstruct` command, this is normal and it operates well without it. see [manual_ethercat_config](./manual_ethercat_config.md)
+
+* Inginia registers: [inginia registers](https://drives.novantamotion.com/eve-xcr/ethercat-canopen-registers)
+* Technosoft registers [technosoft registers](https://github.com/user-attachments/files/16573778/P091.064.EtherCAT.iPOS_.UM_.1123.2.pdf)
